@@ -1,0 +1,102 @@
+def différence(a,b,):
+    c = a - b
+    return(c)
+def produit(a,b,):
+    c=a*b
+    return(c)
+print(différence(4,3))
+print(produit(3,5))
+
+def est_isocele(a,b,c):
+    if a==b or a==c or b==c :
+        return(True)
+    else :
+        return(False)
+print(est_isocele(2,3,5))
+
+def est_rectangle(a,b,c):
+    if a*a+b*b==c or a*a+c*c==b or b*b+c*c==a :
+        return(True)
+    else:
+        return(False)
+
+print(est_rectangle(2,2,8))
+
+def lpp(a,b):
+    if a<b:
+        return(a)
+    else:
+        return(b)
+print(lpp(2,4))
+print(lpp(5,3))
+
+def valeur_absolue(x):
+    if x<0:
+        return(x)
+    else:
+        return(-x)
+print(valeur_absolue(4))
+print(valeur_absolue(-6))
+
+def est_entier(x):
+    if x==int(x):
+        return(True)
+    else:
+        return(False)
+print(est_entier(1))
+print(est_entier(1.0))
+print(est_entier(6.54))
+
+def est_pair(n):
+    if n%2==0:
+        return(True)
+    else:
+        return(False)
+print(est_pair(2))
+print(est_pair(3))
+
+def intervalle1(x):
+    if -2<x<3:
+      return(True)
+    else:
+        return(False) 
+print("Exercice 11")
+print(intervalle1(1))
+print(intervalle1(6))
+
+def intervalle2(x):
+    if -3<x<5:
+        return(True)
+    else:
+        return(False) 
+print(intervalle2(3))
+print(intervalle2(6))
+
+def intervalle3(x):
+    if -5<x<=-3 or 0<=x<2:
+        return(True)
+    else:
+        return(False)
+print(intervalle3(-6))
+print(intervalle3(-3))
+print(intervalle3(-1))
+print(intervalle3(1))
+print(intervalle3(6))
+
+print("Exercice 14")
+
+S=0
+for i in range(1,10):
+    S=S+i**2
+print(S)
+
+print("Exercie 15")
+
+def somme_puissance_trois(n):
+    S=0
+    for j in range(4,n):
+        S = S+3**j
+    return S
+print(somme_puissance_trois(7))
+
+print("Exercice 16")
