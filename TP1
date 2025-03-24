@@ -1,7 +1,7 @@
-def différence(a,b,):
+def différence(a,b,c):
     c = a - b
     return(c)
-def produit(a,b,):
+def produit(a,b,c):
     c=a*b
     return(c)
 print(différence(4,3))
