@@ -1,0 +1,16 @@
+import string
+import getpass
+
+def forceMDP (i):
+    mots  = getpass.getpass("Entrez votre mots de passe :")
+    lettres = any(c.isalpha() for c in mots)
+    chiffres = any(c.isdigit() for c in mots)
+    speciaux = any(c in "!@#$%&}{[]()|<>?.,;:/~'=+-_" for c in mots)
+    if len(mots) < 6 or (lettres and not chiffres and not speciaux):
+        print("Le mot de passe est facile.")
+    if len(mots) >= 6 and lettres and chiffres  and not speciaux:
+        print("Le mot de passe est moyen.")
+    else:
+        print("Le mot de passe est fort.")
+    return i 
+forceMDP(5)
