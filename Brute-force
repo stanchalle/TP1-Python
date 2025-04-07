@@ -1,0 +1,46 @@
+import time
+import random
+import getpass
+
+
+
+tentatives_max = 3
+tentatives = 0
+heure_derniere_tentative = time.time()
+
+def generer_pin():
+    return str(random.randint(1000, 9999)) 
+
+def verifier_mots_de_passe(Nom_d_utilisateur,saisie_mdp):  
+    global tentatives, heure_derniere_tentative
+    Nom_d_utilisateur = "Stanislas"
+    mots_de_passe = "secret123"
+    while True:
+    
+        if tentatives >= tentatives_max:
+            print("Trop de tentatives atteintes. Code pin envoyé")
+            pin=generer_pin()
+            file = open("CodePIN.txt", "w") 
+            file.write(pin) 
+            file.close()
+
+            for i in range (2):
+                saisie= input("Entrez le code pin : ")
+                if saisie == pin:
+                    print("Accès autorisé")
+                    tentatives = 0
+                    return
+            else:
+                print("Accès refusé")
+                return
+        if saisie_mdp == mots_de_passe:
+            print("Accès autorisé")
+            return
+        else:
+            tentatives += 1
+            print("Mot de passe incorrect.")
+            saisie_mdp = input("Entrez votre mot de passe : ")
+            
+Nom_d_utilisateur= input("Entrez votre nom d'utilisateur : ")
+saisie_mdp= getpass.getpass("Entrez votre mots de passe : ")
+verifier_mots_de_passe(Nom_d_utilisateur,saisie_mdp)
